@@ -4,8 +4,7 @@ import zipfile
 import os
 import tempfile
 
-
-import config
+from community_datasets import config
 
 MODE = sys.argv[1]
 CRED = '\033[91m'

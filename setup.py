@@ -8,8 +8,8 @@ setup(
   description = 'API to use community datasets.',
   author = 'rushabh-v',
   author_email = 'vasanirushabh24@gmail.com',
-  url = 'https://github.com/rushabh-v',
-#   download_url = 'https://github.com/user/reponame/archive/v_01.tar.gz',
+  url = 'https://github.com/rushabh-v/community-datasets-cli',
+  download_url = 'https://github.com/rushabh-v/community-datasets-cli/archive/0.1.tar.gz',
   keywords = ['tenslrflow', 'TFDS', 'Datasets', 'community_datasets'],
   classifiers=[
     'Development Status :: 3 - Alpha',

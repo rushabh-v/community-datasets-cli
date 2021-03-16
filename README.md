@@ -1,1 +1,1 @@
-# community-datasets-api
+# community-datasets-cli
