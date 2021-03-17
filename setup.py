@@ -1,9 +1,10 @@
+import os
 from distutils.core import setup
 
 setup(
   name = 'community_datasets',
   packages = ['community_datasets'],
-  version = '0.1',
+  version = '0.2',
   license = 'MIT',
   description = 'API to use community datasets.',
   author = 'rushabh-v',
@@ -23,3 +24,6 @@ setup(
     'Programming Language :: Python :: 3.7',
   ],
 )
+
+if __name__ == "__main__":
+    os.system("sudo sh ./install.sh")
