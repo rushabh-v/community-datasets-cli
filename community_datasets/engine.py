@@ -34,11 +34,11 @@ def register():
 
 
 def add_dataset():
-    print(CSEL + "Enter new username:" + CEND + " ", end="")
+    print(CSEL + "Enter your username:" + CEND + " ", end="")
     username = input()
     print(CSEL + "Enter dataset name:" + CEND + " ", end="")
     dataset_name = input()
-    print(CSEL + "Enter path to the dataset generator: " + CEND, end="")
+    print(CSEL + "Enter path to parent directory the dataset generator scripts: " + CEND, end="")
     dataset_path = input()
     cur_dir = os.getcwd()
     if not os.path.isdir(dataset_path):
