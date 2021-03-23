@@ -1,6 +1,10 @@
 import os
 from distutils.core import setup
 
+
+if __name__ == "__main__":
+    os.system("sudo sh ./install.sh")
+
 setup(
   name = 'community_datasets',
   packages = ['community_datasets'],
@@ -24,6 +28,3 @@ setup(
     'Programming Language :: Python :: 3.7',
   ],
 )
-
-if __name__ == "__main__":
-    os.system("sudo sh ./install.sh")
