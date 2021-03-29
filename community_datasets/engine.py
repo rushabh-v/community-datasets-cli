@@ -1,17 +1,18 @@
-import sys
-import requests
-import zipfile
-import os
-import tempfile
 import getpass
+import os
+import sys
+import tempfile
+import zipfile
+
+import requests
 
 from community_datasets import config
 
 MODE = sys.argv[1]
-CRED = '\033[91m'
-CEND = '\033[0m'
-CSEL = '\33[7m'
-CGRN = '\033[92m'
+CRED = "\033[91m"
+CEND = "\033[0m"
+CSEL = "\33[7m"
+CGRN = "\033[92m"
 
 
 def call(username, password=None, dataset_name=None, file=None, mode=None):
@@ -26,7 +27,7 @@ def call(username, password=None, dataset_name=None, file=None, mode=None):
             "password": password,
             "dataset_name": dataset_name,
         },
-        files = {"file": file}
+        files={"file": file},
     )
 
 
@@ -52,7 +53,13 @@ def add_dataset():
     password = getpass.getpass(CSEL + "Your password:" + CEND + " ")
     print(CSEL + "Enter dataset name:" + CEND + " ", end="")
     dataset_name = input()
-    print(CSEL + "Enter path to parent directory the dataset generator scripts:" + CEND + " ", end="")
+    print(
+        CSEL
+        + "Enter path to parent directory the dataset generator scripts:"
+        + CEND
+        + " ",
+        end="",
+    )
     dataset_path = input()
     cur_dir = os.getcwd()
     if not os.path.isdir(dataset_path):
@@ -90,7 +97,6 @@ def get_data(username=None, dataset_name=None, return_cls=False, cls_name=None):
             f.write(res.text)
 
         if return_cls:
-            import sys
             sys.path.append(path)
             statement = f"from {dataset_name} import {cls_name}"
             exec(statement)
