@@ -1,3 +1,4 @@
+
 import getpass
 import os
 import sys
@@ -47,7 +48,7 @@ def register():
         print(CRED + "Passwords didn't match, try again." + CEND)
 
 
-def add_dataset():
+def deploy_dataset():
     print(CSEL + "Enter your namespace:" + CEND + " ", end="")
     username = input()
     password = getpass.getpass(CSEL + "Your password:" + CEND + " ")
@@ -112,9 +113,21 @@ if __name__ == "__main__":
 
     if MODE == "register":
         register()
-    elif MODE in ("add", "update"):
-        add_dataset()
+    elif MODE in ("deploy", "update"):
+        deploy_dataset()
     elif MODE == "download":
         get_data()
+    elif MODE in ("-h", "--help"):
+        print("""usage: engine.py [-h] mode
+
+positional arguments:
+  mode - values:
+           register - Register a new namespace
+           deploy - deploy a dataset on your namespace.
+           update - update an existing dataset on your namespace.
+
+optional arguments:
+  -h, --help  show this help message and exit
+        \n""")
     else:
         raise NotImplementedError()
